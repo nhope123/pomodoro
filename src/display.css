@@ -1,0 +1,95 @@
+/* Contains all css for the display.js module*/
+@media screen and (max-width:450px) {
+  #clock-face{
+    width: 250px;
+    height: 250px;
+    border: 10px outset red;
+  }
+  #display-container{
+    width: 78%;
+    height: 49%;
+  }
+  #break-label, #break-length, #session-label, #session-length{
+    font-size: 0.875em;
+  }
+  #time-left{
+    font-size: 2.0em;
+    line-height: 1;
+    padding-top: 7px;
+  }
+  #timer-label{
+    font-size: 1.0625em;
+    padding-bottom: 3px;
+  }
+}
+@media screen and (min-width: 451px) {
+  #clock-face{
+    width: 340px;
+    height: 340px;
+    border: 15px outset red;
+  }
+  #display-container{
+    width: 76%;
+    height: 51%;
+  }
+  #break-label, #break-length, #session-label, #session-length{
+    font-size: 1.125em;
+  }
+  #time-left{
+    font-size: 2.625em;
+    line-height: 1.5;
+  }
+  #timer-label{
+    font-size: 1.375em;
+  }
+}
+
+
+#clock-face{
+  display: grid;
+  grid-template: "dpl" 1fr/1fr;
+  border-radius: 50%;
+  justify-content: center;
+  align-content: center;
+  background-color: #0066CC;
+
+}
+#display-container{
+  border: 4px inset #0066CC;
+  border-radius: 8px;
+  grid-area: dpl;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: 1fr 1fr 2.2fr 1.2fr;
+  grid-template-areas: "btx btx . stx stx"
+                       "bds bds . sds sds"
+                       "tlt tlt tlt tlt tlt"
+                       "tlb tlb tlb tlb tlb";
+  align-self: center;
+  margin: 0 auto;
+  background: #F5F5F5;
+  background: -moz-linear-gradient(top, #F5F5F5 0%, #B3B3B3 100%);
+  background: -webkit-linear-gradient(top, #F5F5F5 0%, #B3B3B3 100%);
+  background: linear-gradient(to bottom, #F5F5F5 0%, #B3B3B3 100%);
+}
+#break-label, #break-length, #session-label, #session-length{
+  color: black;
+}
+#break-label, #break-length, #session-label, #session-length, #time-left, #timer-label{
+  text-align: center;
+}
+
+#break-label{ grid-area: btx;}
+#break-length{ grid-area: bds;}
+#session-label{ grid-area: stx;}
+#session-length{ grid-area: sds;}
+#time-left{
+  grid-area: tlt;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+#timer-label{
+  grid-area: tlb;
+  color: black;
+  font-weight: 600;
+}

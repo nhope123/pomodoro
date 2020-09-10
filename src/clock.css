@@ -1,0 +1,32 @@
+/* Contains all css for the clock.js module */
+
+@media screen and (max-width: 450px) {
+  #p-clock{
+    width:340px;
+    height: 610px;
+  }
+}
+@media screen and (min-width: 451px) {
+  #p-clock{
+    width: 650px;
+    height: 465px;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows: 1.5fr 3fr 1.5fr 1fr;
+    grid-template-areas: ". ex ." "bs ex ss" ". ex ." ". ct .";
+  }
+}
+
+
+#p-clock{
+  display: grid;
+
+}
+#left{
+  grid-area: bs;
+}
+#right{
+  grid-area: ss;
+}
+#control{
+  grid-area: ss;
+}

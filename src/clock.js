@@ -6,14 +6,15 @@ import {Set, Control} from './button.js';
 export class PomoClock extends React.Component{
 
   render(){
-    var left = {increment: "break-increment",decrement: "break-decrement"};
-    var right = {increment: "session-increment",decrement: "session-decrement"};
+    var left = {id: "left", increment: "break-increment",decrement: "break-decrement", label: "Break"};
+    var right= {id:"right", increment: "session-increment",decrement: "session-decrement", label: "Session"};
     return (
-      <div>
-        <Set {...{left}} />
+      <div id="p-clock">
+        <Set {...left} />
         <Exhibit/>
-        <Set {...{right}}/>
+        <Set {...right}/>
         <Control />
+        <audio id="beep" src="./audio/Alarm-clock-sound-short.mp3" type="audio/mp3" ></audio>
       </div>
 
 

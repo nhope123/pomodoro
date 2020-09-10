@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './display.css';
 import './botton.css';
+import './clock.css';
 import * as clock from "./clock.js";
 import * as serviceWorker from './serviceWorker';
 

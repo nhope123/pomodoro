@@ -46,6 +46,7 @@
 
 
 #clock-face{
+  grid-area: ex;
   display: grid;
   grid-template: "dpl" 1fr/1fr;
   border-radius: 50%;

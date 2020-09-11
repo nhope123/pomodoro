@@ -1,4 +1,5 @@
 import React from 'react';
+import './clock.css';
 import {Exhibit} from './display.js';
 import {Set, Control} from './button.js';
 
@@ -9,7 +10,7 @@ export class PomoClock extends React.Component{
     var left = {id: "left", increment: "break-increment",decrement: "break-decrement", label: "Break"};
     var right= {id:"right", increment: "session-increment",decrement: "session-decrement", label: "Session"};
     return (
-      <div id="p-clock">
+      <div id="clock">
         <Set {...left} />
         <Exhibit/>
         <Set {...right}/>

@@ -2,6 +2,7 @@
 
 @media screen and (max-width: 450px) {
   #clock{
+
     width:340px;
     height: 550px;
     grid-template-columns: 1fr 1fr;
@@ -13,17 +14,20 @@
 }
 @media screen and (min-width: 451px) {
   #clock{
-    width: 650px;
-    height: 465px;
+    width: 540px;
+    height: 390px;
     grid-template-columns: 2fr 6fr 2fr;
     grid-template-rows: 1.5fr 3fr 1.5fr 1fr;
     grid-template-areas: ". ex ." "bs ex ss" ". ex ." ". ct .";
+    padding: 15px;
+    color: white;
   }
 }
 
 
 #clock{
   border: 3px solid black;
+  border-radius: 15px;
   grid-area: ck;
   display: grid;
   position: relative;
@@ -31,7 +35,8 @@
   align-content: center; */
   align-self: center;
   margin: 0 auto;
-  padding: 10px;
+  /* padding: 10px; */
+  background: url("https://wallpapercave.com/wp/wp2780415.jpg") 100% 100%;
 
 
 

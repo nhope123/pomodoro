@@ -35,3 +35,12 @@
   position: relative;
   float: right;
 }
+
+button{
+  width: 76px;
+  height: 30px;
+}
+.section-set{
+  align-self: center;
+  margin: 0 auto;
+}

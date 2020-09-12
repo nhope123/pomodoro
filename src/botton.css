@@ -1,0 +1,52 @@
+/* Contains all css for the button.js module */
+@media screen and (max-width: 450px) {
+  #control{
+    width: 250px;
+  }
+
+}
+@media screen and (min-width: 451px) {
+  #control{
+    width:100%;
+  }
+}
+#control i, .section-set i{
+  font-size: 18px !important;
+  color: #0066CC;
+}
+#control{
+  display: block;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+.left-control{
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0px auto;
+}
+.right-control{
+  display: block;
+  position: relative;
+  float: right;
+}
+
+button{
+  width: 76px;
+  height: 30px;
+  cursor: pointer;
+}
+button:active{
+  border: 3px inset rgba(64, 64, 64, 0.5);
+  border-radius: 6px;
+}
+.section-set{
+  align-self: center;
+  margin: 0 auto;
+}
+.section-set div{ padding: 2px;}
+#left, #right{
+  color: white;
+  text-align: center;
+}

@@ -15,31 +15,25 @@
 @media screen and (min-width: 451px) {
   #clock{
     width: 540px;
-    height: 390px;
+    height: 350px;
     grid-template-columns: 2fr 6fr 2fr;
     grid-template-rows: 1.5fr 3fr 1.5fr 1fr;
     grid-template-areas: ". ex ." "bs ex ss" ". ex ." ". ct .";
-    padding: 15px;
-    color: white;
+    padding: 10px;
   }
 }
 
 
 #clock{
-  border: 3px solid black;
+  border: 0;
   border-radius: 15px;
   grid-area: ck;
   display: grid;
   position: relative;
-  /* justify-content: center;
-  align-content: center; */
   align-self: center;
   margin: 0 auto;
-  /* padding: 10px; */
-  background: url("https://wallpapercave.com/wp/wp2780415.jpg") 100% 100%;
-
-
-
+  background: url(./mesh.jpg) 100% 100%;
+  box-shadow: 4px 4px 6px rgba(64, 64, 64, 1.0)
 }
 #left{
   grid-area: bs;
@@ -52,4 +46,15 @@
 }
 #clock-face{
   grid-area: ex;
+}
+#logo{
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 15px;
+  left: 15px;
+}
+#logo i{
+  font-size: 18px !important;
+  color: white !important;
 }

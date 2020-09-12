@@ -16,6 +16,11 @@ export class PomoClock extends React.Component{
         <Set {...right}/>
         <Control />
         <audio id="beep" src="./audio/Alarm-clock-sound-short.mp3" type="audio/mp3" ></audio>
+        <div id="logo">
+          <a href="https://nhope123.github.io/pomodoro/" target="_blank" rel="noopener noreferrer" title=" Github repository">
+            <i class="fa fa-rebel" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
 
 

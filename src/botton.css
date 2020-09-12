@@ -3,26 +3,22 @@
   #control{
     width: 250px;
   }
-  #control button{
-    width: 1.14%;
-    height: 1.14%;
-  /*  border: 0 ;
-    border-radius: 10px; */
-  }
-  #clock i, #left, #right, #control{
-    font-size: 18px;
-    font-weight: bold;
-  }
+
 }
 @media screen and (min-width: 451px) {
   #control{
     width:100%;
   }
 }
+#control i, .section-set i{
+  font-size: 18px !important;
+  color: #0066CC;
+}
 #control{
   display: block;
   position: relative;
-
+  color: white;
+  text-align: center;
 }
 .left-control{
   display: block;
@@ -39,8 +35,18 @@
 button{
   width: 76px;
   height: 30px;
+  cursor: pointer;
+}
+button:active{
+  border: 3px inset rgba(64, 64, 64, 0.5);
+  border-radius: 6px;
 }
 .section-set{
   align-self: center;
   margin: 0 auto;
+}
+.section-set div{ padding: 2px;}
+#left, #right{
+  color: white;
+  text-align: center;
 }

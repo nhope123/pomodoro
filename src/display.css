@@ -3,7 +3,7 @@
   #clock-face{
     width: 250px;
     height: 250px;
-    border: 10px outset red;
+    border: 10px outset rgba(0,0,0,0.4);
   }
   #display-container{
     width: 78%;
@@ -19,25 +19,24 @@
   }
   #timer-label{
     font-size: 1.0625em;
-    padding-bottom: 3px;
+    padding-top: 4px;
   }
 }
 @media screen and (min-width: 451px) {
   #clock-face{
-    width: 300px;
-    height: 300px;
-    border: 15px outset red;
+    width: 280px;
+    height: 280px;
+    border: 15px outset rgba(64, 64, 64,0.8);
   }
   #display-container{
-    width: 76%;
+    width: 79%;
     height: 51%;
   }
   #break-label, #break-length, #session-label, #session-length{
     font-size: 1.125em;
   }
   #time-left{
-    font-size: 2.625em;
-    line-height: 1.5;
+    font-size: 2.375em;
   }
   #timer-label{
     font-size: 1.375em;
@@ -52,6 +51,7 @@
   justify-content: center;
   align-content: center;
   background-color: #0066CC;
+  margin: 0px auto;
 
 }
 #display-container{
@@ -78,18 +78,24 @@
 #break-label, #break-length, #session-label, #session-length, #time-left, #timer-label{
   text-align: center;
 }
-
 #break-label{ grid-area: btx;}
 #break-length{ grid-area: bds;}
 #session-label{ grid-area: stx;}
 #session-length{ grid-area: sds;}
 #time-left{
   grid-area: tlt;
+  display: block;
+  position: relative;
+  bottom: 3px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
 #timer-label{
   grid-area: tlb;
+  display: block;
+  position: relative;
+  bottom: 10px;
+
   color: black;
   font-weight: 600;
 }

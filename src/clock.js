@@ -52,9 +52,9 @@ export class PomoClock extends React.Component{
   }
   render(){
     var left = {id: "left", increment: "break-increment",decrement: "break-decrement",
-                label: "Break",increase: this.breakIncrease, decrease: this.breakDecrease};
+                label: "Set Break",increase: this.breakIncrease, decrease: this.breakDecrease};
     var right= {id:"right", increment: "session-increment",decrement: "session-decrement",
-                label: "Session",increase: this.sessionIncrease, decrease: this.sessionDecrease};
+                label: "Set Session",increase: this.sessionIncrease, decrease: this.sessionDecrease};
     var displayValues = {break: this.state.break, session: this.state.session};
     var clockControl = {initialize: this.initialize};
     return (

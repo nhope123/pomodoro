@@ -9,8 +9,8 @@ export class Exhibit extends React.Component{
           <div id="session-label" >Session</div>{/* Session length display */}
           <div id="break-length" >{this.props.break}</div>{/* Break length display */}
           <div id="session-length" >{this.props.session}</div>{/* Session length display */}
-          <div id="time-left" >25:00</div>{/* Session time display */}
-          <div id="timer-label" >Session</div>{/* Session or Break text */}
+          <div id="time-left" style={{color: this.props.color}} >{this.props.mins}:{this.props.secs}</div>{/* Session time display */}
+          <div id="timer-label" >{this.props.timeLabel}</div>{/* Session or Break text */}
         </div>
       </section>
     );

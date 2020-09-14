@@ -8,12 +8,12 @@ export class Set extends React.Component{
     var decrease = this.props.label + " length decrease";
     return(
       <section id={this.props.id} className="section-set">
-        <button id={this.props.increment} type="button" title={increase} tabindex="0" onClick={this.props.increase}>
-          <i class="fa fa-chevron-up" aria-hidden="true"></i>
+        <button id={this.props.increment} type="button" title={increase} tabIndex="0" onClick={this.props.increase}>
+          <i className="fa fa-chevron-up" aria-hidden="true"></i>
         </button>
         <div >{this.props.label}</div>
-        <button id={this.props.decrement} type="button"  title={decrease} tabindex="0" onClick={this.props.decrease}>
-          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        <button id={this.props.decrement} type="button"  title={decrease} tabIndex="0" onClick={this.props.decrease}>
+          <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </button>
       </section>
     );
@@ -25,7 +25,7 @@ class Operator extends React.Component{
   render(){
     return(
       <article className={this.props.control}>
-        <button id={this.props.id} type="button" tabindex="0" onClick={this.props.callBack}>
+        <button id={this.props.id} type="button" tabIndex="0" onClick={this.props.callBack}>
           <i className={this.props.icon}  aria-hidden="true"></i>
         </button>
         <div>{this.props.display}</div>
@@ -38,10 +38,16 @@ class Operator extends React.Component{
 export class Control extends React.Component{
 
   render(){
+    var playOperator = {id: "start_stop",icon: this.props.icon,
+                        display:"Play/Pause", control:"left-control",
+                        callBack: this.props.update };
+    var resetOperator = {id: "reset", icon: "fa fa-refresh",
+                         display: "Reset", control: "right-control",
+                         callBack: this.props.initialize};
     return (
       <section id="control">
-        <Operator {...{id: "start_stop",icon: "fa fa-play-circle", display:"Play/Pause",control:"left-control" }} />
-        <Operator {...{id: "reset",icon: "fa fa-refresh", display: "Reset", control: "right-control", callBack: this.props.initialize}} />
+        <Operator {...playOperator} />
+        <Operator {...resetOperator} />
       </section>
     );
   }

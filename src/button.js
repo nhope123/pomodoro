@@ -8,11 +8,11 @@ export class Set extends React.Component{
     var decrease = this.props.label + " length decrease";
     return(
       <section id={this.props.id} className="section-set">
-        <button id={this.props.increment} type="button" title={increase} tabIndex="0" onClick={this.props.increase}>
-          <i className="fa fa-chevron-up" aria-hidden="true"></i>
+        <button id={this.props.increment} type="button" title={increase} tabIndex="0" onClick={this.props.increase} value={this.props.value}>
+          <i className="fa fa-chevron-up" aria-hidden="true" ></i>
         </button>
         <div >{this.props.label}</div>
-        <button id={this.props.decrement} type="button"  title={decrease} tabIndex="0" onClick={this.props.decrease}>
+        <button id={this.props.decrement} type="button"  title={decrease} tabIndex="0" onClick={this.props.decrease} value={this.props.value}>
           <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </button>
       </section>

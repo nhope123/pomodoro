@@ -13,6 +13,7 @@
   },
   "homepage": "https://nhope123.github.io/pomodoro/",
   "scripts": {
+    "clean": "gh-pages-clean",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",

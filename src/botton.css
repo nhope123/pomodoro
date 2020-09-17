@@ -10,7 +10,7 @@
     width:100%;
   }
 }
-#control i, .section-set i{
+#control i, .section-set span{
   font-size: 18px !important;
   color: #0066CC;
 }

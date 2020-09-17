@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Component containing all elements for the timer display
 export class Exhibit extends React.Component{
   render(){
     return(

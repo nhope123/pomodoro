@@ -3,6 +3,7 @@ import React from 'react';
 // Component containing all elements for the timer display
 export class Exhibit extends React.Component{
   render(){
+    //console.log(this.props.mins);
     return(
       <section id="clock-face"> {/* circular face */}
         <div id="display-container"> {/* display container */}

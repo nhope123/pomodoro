@@ -7,13 +7,14 @@ import mp3 from './Alarm-clock-sound-short.mp3';
 // Gobal variable
 let timeValue; // value for checking the break and session
 let timeLeftInterval; // variable for setting and clearing the iteration intervals
+let count; // testing varable
 
 // Complete clock layout Component
 export class PomoClock extends React.Component{
   constructor(props){
     super(props);
     this.state = {breakV: 5, session: 25,
-                  timeDisplay: '25:00', action: 'stop',
+                  timeDisplay: "25:00", action: 'stop',
                   timerLabel: 'Session', color: '#000000'};
     this.resetClock  = this.resetClock.bind(this);
     this.getCount    = this.getCount.bind(this);
@@ -25,6 +26,7 @@ export class PomoClock extends React.Component{
     this.sessionDecrease = this.sessionDecrease.bind(this);
     this.breakIncrease = this.breakIncrease.bind(this);
     this.breakDecrease = this.breakDecrease.bind(this);
+    this.setPauseDisplay = this.setPauseDisplay.bind(this);
   }
   // Stop / pause the timer
   stopTimer(){
@@ -40,6 +42,7 @@ export class PomoClock extends React.Component{
     this.setState(()=>{return {timeDisplay: '00:00',timerLabel: labelT}});
     this.countDown();
   }
+  // Add a zero before all single digit numbers
   correctTime(num){
     var number = num < 10 ? ('0'+ num) :num;
     return number;
@@ -67,7 +70,6 @@ export class PomoClock extends React.Component{
         this.setState(()=>{return {timeDisplay: (this.correctTime(this.state.session) +':00'), color: 'black'}});
       }
     }
-    //console.log('Start display: '+ this.state.timeDisplay);
     return countTimer; // return the count down value
   }
   // Count down and display timer values
@@ -96,25 +98,42 @@ export class PomoClock extends React.Component{
         this.countEnd();
       }
     },1000);
-
+  }
+  // Display ajusted timer when stopped and paused
+  setPauseDisplay(val, setType){
+    if(this.state.action === 'pause' || this.state.action === 'stop'){
+      if (setType === 'break' && this.state.timerLabel === 'Break') {
+        this.setState(()=>{return{timeDisplay: val}});
+      }
+      if (setType === 'session' && this.state.timerLabel === 'Session') {
+        this.setState(()=>{return{timeDisplay: val}});
+      }
+    }
   }
   // Decrease the Break length value
   breakDecrease(){
-    (this.state.breakV >= 2)? (this.setState( {breakV: this.state.breakV - 1 })) : (this.setState({breakV: 1 }));
+    count =  (this.state.breakV >= 2)? (this.state.breakV - 1) : 1 ;
+    this.setState( {breakV: count });
+    this.setPauseDisplay(count + ':00', 'break');
   }
   // Decrease the session length value
   sessionDecrease(){
-    (this.state.session >= 2)? (this.setState({session: this.state.session - 1 })) : (this.setState( {session: 1 }));
+    count = (this.state.session >= 2)? (this.state.session - 1 ) : 1 ;
+    this.setState( {session: count });
+    this.setPauseDisplay(count + ':00', 'session');
   }
   // Increase the Break length value
   breakIncrease(){
-    (this.state.breakV <= 59)? (this.setState( {breakV: this.state.breakV + 1 })) : (this.setState({breakV: 60 }));
+    count = (this.state.breakV <= 59)? (this.state.breakV + 1 ) : 60 ;
+    this.setState( {breakV: count });
+    this.setPauseDisplay(count + ':00', 'break');
   }
   // Increase the session length value
   sessionIncrease(){
-    (this.state.session <= 59)? (this.setState({session: this.state.session + 1 })) : (this.setState( {session: 60 }));
+    count = (this.state.session <= 59)? (this.state.session + 1 ) : 60 ;
+    this.setState( {session: count });
+    this.setPauseDisplay(count + ':00', 'session');
   }
-
   // Stop the timer and initialize variables
   resetClock(){
     clearInterval(timeLeftInterval); // Stop timer
@@ -124,12 +143,11 @@ export class PomoClock extends React.Component{
     audioEL.pause();
     audioEL.currentTime = 0;
   }
-
   render(){
-
     var playIcon;
     var playFunction;
     var action = this.state.action;
+    // Toogle play and pause icons
     if(action === 'pause' || action === 'stop'){
       playIcon = "fa fa-play-circle";
       playFunction = this.countDown;

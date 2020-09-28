@@ -176,7 +176,7 @@ export class PomoClock extends React.Component{
         <Control {...clockControl}/>
         <audio id="beep"  src={mp3} type='audio/mpeg' > </audio>
         <div id="logo">
-          <a href="https://nhope123.github.io/pomodoro/" target="_blank" rel="noopener noreferrer" title=" Github repository">
+          <a href="https://github.com/nhope123/pomodoro" target="_blank" rel="noopener noreferrer" title=" Github repository">
             <i className="fa fa-rebel" aria-hidden="true"></i>
           </a>
         </div>

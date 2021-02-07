@@ -10,7 +10,7 @@ Web base countdown timer.
 + Clear and reset timer
 
 ## Display
-The display component is location in the center unit of the timer. It
+The display component is located in the central unit of the timer. It
 contains the the break and session length values, which are update from 
 the set increase and dercrease components. The countdown timer value is 
 updated and displayed at the center of the display component. The timer 
